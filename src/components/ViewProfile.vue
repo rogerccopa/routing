@@ -12,6 +12,15 @@ export default {
             // $route refers to the current route
             userId: this.$route.params.user_id
         }
+    },
+    methods: {
+        updateId(){
+            this.userId = this.$route.params.user_id;
+        }
+    },
+    watch: {
+        // watch for $route, if it changes then invoke 'updateId'
+        $route: 'updateId'
     }
 }
 </script>
